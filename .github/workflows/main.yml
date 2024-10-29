@@ -8,9 +8,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up JDK 20
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v3  # 升级到 v3
         with:
-          java-version: 20  # 此处的JDK版本要和maven pom.xml文件中的版本一致
+          distribution: 'temurin'  # 指定发行版
+          java-version: 20         # 指定 JDK 版本
 
       - name: Cache Maven packages
         uses: actions/cache@v3
