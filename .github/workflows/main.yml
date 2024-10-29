@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up JDK 20
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
           java-version: 20  # 此处的JDK版本要和maven pom.xml文件中的版本一致
 
@@ -20,4 +20,4 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Run tests with Maven
-        run: mvn -B test --file pom.xml  # 这里具体指向你的pom.xml文件位置
+        run: mvn -B -X test --file pom.xml
